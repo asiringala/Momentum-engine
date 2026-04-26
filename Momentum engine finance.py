@@ -77,3 +77,44 @@ plt.plot(x_future, future_predictions, label='10-Day Momentum Forecast', color='
 plt.legend()
 plt.title("Momentum Engine: Historical Reconstruction & Future Projection")
 plt.savefig('momentum_plot.png')
+
+# finding the maximum or minimum
+
+def check_end_points (x, c, b,a):
+    critical_value = ((-b**2)/(4*a) ) + c
+    critical_point = -b / (2 * a)
+    if critical_value < x[0] and critical_value < x[-1]:
+        res = "Minimum"
+    else:
+        res = "Maximum"
+        
+    print(f"Status: {res}")
+    print(f"The turn happened at time: {critical_point}")
+    print(f"The price at that turn was: {critical_value}")
+    
+    return res
+    
+check_end_points(future_predictions ,u_last ,u_prime_last ,accel_last )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
