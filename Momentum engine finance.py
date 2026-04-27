@@ -81,8 +81,8 @@ plt.savefig('momentum_plot.png')
 # finding the maximum or minimum
 
 def check_end_points (x, c, b,a):
-    critical_value = ((-b**2)/(4*a) ) + c
-    critical_point = -b / (2 * a)
+    critical_value = c - ((b**2) / (2 * a))
+    critical_point = -b / a
     if critical_value < x[0] and critical_value < x[-1]:
         res = "Minimum"
     else:
